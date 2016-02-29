@@ -13,7 +13,10 @@ exports.config = {
 
     // Saucelabs credentials
     username: 'talkabouttest',
-    accessKey: '397a4689-88ed-43c7-b57d-ce1332ca92a1'
+    accessKey: '397a4689-88ed-43c7-b57d-ce1332ca92a1',
+
+    // Test suite name.
+    'name': 'SemaphoreCI, SauceLabs and Protractor test suite'
   },
 
   jasmineNodeOpts: {
