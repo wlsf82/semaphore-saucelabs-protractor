@@ -9,7 +9,7 @@ exports.config = {
 
   capabilities: {
     'browserName': 'chrome',
-    'chromeOptions': {'args': ['--disable-extensions']}
+    'chromeOptions': {'args': ['--disable-extensions']},
 
     // Saucelabs credentials
     username: 'talkabouttest',
