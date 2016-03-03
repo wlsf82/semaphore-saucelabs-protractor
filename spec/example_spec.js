@@ -9,7 +9,7 @@ describe('angularjs homepage', function() {
 
     var greeting = element(by.binding('yourName'));
 
-    expect(greeting.getText()).toEqual('sHello Julie!');
+    expect(greeting.getText()).toEqual('Hello Julie!');
   });
 
   describe('todo list', function() {
