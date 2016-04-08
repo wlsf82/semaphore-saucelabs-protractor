@@ -1,3 +1,5 @@
+var SpecReporter = require('./node_modules/jasmine-spec-reporter');
+
 exports.config = {
   // The address of a running selenium server.
   seleniumAddress: 'http://ondemand.saucelabs.com:80/wd/hub',
@@ -19,11 +21,23 @@ exports.config = {
     'name': 'SemaphoreCI, SauceLabs and Protractor test suite'
   },
 
+  onPrepare: function() {
+    // Add better test report on console.
+    jasmine.getEnv().addReporter(new SpecReporter({
+      displayFailuresSummary: true,
+      displayFailedSpec: true,
+      displaySuiteNumber: true,
+      displaySpecDuration: true
+    }));
+    // Maximize window before start testing.
+    browser.driver.manage().window().maximize();
+  },
+
   jasmineNodeOpts: {
     onComplete: null,
     isVerbose: false,
     showColors: true,
     includeStackTrace: true,
-    defaultTimeoutInterval: 10000
+    defaultTimeoutInterval: 999999
   }
 };
